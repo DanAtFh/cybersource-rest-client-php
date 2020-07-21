@@ -69,7 +69,8 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'pointOfSaleInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponsePointOfSaleInformation',
         'installmentInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseInstallmentInformation',
         'riskInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseRiskInformation',
-        'consumerAuthenticationInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation'
+        'consumerAuthenticationInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseConsumerAuthenticationInformation',
+        'tokenInformation' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformation'
     ];
 
     /**
@@ -92,7 +93,8 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'pointOfSaleInformation' => null,
         'installmentInformation' => null,
         'riskInformation' => null,
-        'consumerAuthenticationInformation' => null
+        'consumerAuthenticationInformation' => null,
+        'tokenInformation' => null
     ];
 
     public static function swaggerTypes()
@@ -125,7 +127,8 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'pointOfSaleInformation' => 'pointOfSaleInformation',
         'installmentInformation' => 'installmentInformation',
         'riskInformation' => 'riskInformation',
-        'consumerAuthenticationInformation' => 'consumerAuthenticationInformation'
+        'consumerAuthenticationInformation' => 'consumerAuthenticationInformation',
+        'tokenInformation' => 'tokenInformation'
     ];
 
 
@@ -149,7 +152,8 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'pointOfSaleInformation' => 'setPointOfSaleInformation',
         'installmentInformation' => 'setInstallmentInformation',
         'riskInformation' => 'setRiskInformation',
-        'consumerAuthenticationInformation' => 'setConsumerAuthenticationInformation'
+        'consumerAuthenticationInformation' => 'setConsumerAuthenticationInformation',
+        'tokenInformation' => 'setTokenInformation'
     ];
 
 
@@ -173,7 +177,8 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         'pointOfSaleInformation' => 'getPointOfSaleInformation',
         'installmentInformation' => 'getInstallmentInformation',
         'riskInformation' => 'getRiskInformation',
-        'consumerAuthenticationInformation' => 'getConsumerAuthenticationInformation'
+        'consumerAuthenticationInformation' => 'getConsumerAuthenticationInformation',
+        'tokenInformation' => 'getTokenInformation'
     ];
 
     public static function attributeMap()
@@ -223,6 +228,8 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
         $this->container['installmentInformation'] = isset($data['installmentInformation']) ? $data['installmentInformation'] : null;
         $this->container['riskInformation'] = isset($data['riskInformation']) ? $data['riskInformation'] : null;
         $this->container['consumerAuthenticationInformation'] = isset($data['consumerAuthenticationInformation']) ? $data['consumerAuthenticationInformation'] : null;
+        $this->container['tokenInformation'] = isset($data['tokenInformation']) ? $data['tokenInformation'] : null;
+
     }
 
     /**
@@ -607,6 +614,28 @@ class PtsV2PaymentsPost201Response implements ArrayAccess
 
         return $this;
     }
+
+    /**
+     * Gets tokenInformation
+     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformation
+     */
+    public function getTokenInformation()
+    {
+        return $this->container['tokenInformation'];
+    }
+
+    /**
+     * Sets tokenInformation
+     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformation $tokenInformation
+     * @return $this
+     */
+    public function setTokenInformation($tokenInformation)
+    {
+        $this->container['tokenInformation'] = $tokenInformation;
+
+        return $this;
+    }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
