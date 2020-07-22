@@ -69,7 +69,7 @@ class GlobalParameter
 	const INPUTDIGESTERR = "[ERROR] : Unable to access the Input Json file!\n";
 	const INVALIDMETHOD = "[ERROR] : Invalid Method name!\n";
 	const INVALID_REQUEST_TYPE_METHOD="[ERROR] : Entered Request Type should be (GET/POST/PUT)\n";
-	const LOG_END_MSG = PHP_EOL.">END===============================================>".PHP_EOL;
+	const LOG_END_MSG = ">END===============================================>";
 	const LOG_START_MSG = ">START===============================================>";
 	const RUNENV_REQ = "RunEnvironment is mandatory!\n";
 	const LOGDIR = "logDirectory ";
