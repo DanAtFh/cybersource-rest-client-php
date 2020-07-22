@@ -1,6 +1,6 @@
 <?php
 /**
- * PtsV2PaymentsPost201ResponseTokenInformation
+ * PtsV2PaymentsPost201ResponseTokenInformationCustomer
  *
  * PHP version 5
  *
@@ -32,15 +32,14 @@ namespace CyberSource\Model;
 use \ArrayAccess;
 
 /**
- * PtsV2PaymentsPost201ResponseTokenInformation Class Doc Comment
+ * PtsV2PaymentsPost201ResponseTokenInformationCustomer Class Doc Comment
  *
  * @category    Class
- * @description Contains the result of token creation.
  * @package     CyberSource
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class PtsV2PaymentsPost201ResponseTokenInformation implements ArrayAccess
+class PtsV2PaymentsPost201ResponseTokenInformationCustomer implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,15 +47,14 @@ class PtsV2PaymentsPost201ResponseTokenInformation implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ptsV2PaymentsPost201Response_TokenInformation';
+    protected static $swaggerModelName = 'ptsV2PaymentsPost201Response_tokenInformation_customer';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'instrumentIdentifier' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformationInstrumentIdentifier',
-        'customer' => '\CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformationCustomer'
+        'id' => 'string'
     ];
 
     /**
@@ -64,8 +62,7 @@ class PtsV2PaymentsPost201ResponseTokenInformation implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'instrumentIdentifier' => null,
-        'customer' => null
+        'id' => null
     ];
 
     public static function swaggerTypes()
@@ -83,17 +80,16 @@ class PtsV2PaymentsPost201ResponseTokenInformation implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'instrumentIdentifier' => 'instrumentIdentifier',
-        'customer' => 'customer'
+        'id' => 'id'
     ];
+
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
      * @var string[]
      */
     protected static $setters = [
-        'instrumentIdentifier' => 'setInstrumentIdentifier',
-        'customer' => 'setCustomer'
+        'id' => 'setId'
     ];
 
 
@@ -102,8 +98,7 @@ class PtsV2PaymentsPost201ResponseTokenInformation implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'instrumentIdentifier' => 'getInstrumentIdentifier',
-        'customer' => 'getCustomer'
+        'id' => 'getId'
     ];
 
     public static function attributeMap()
@@ -133,8 +128,7 @@ class PtsV2PaymentsPost201ResponseTokenInformation implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['instrumentIdentifier'] = isset($data['instrumentIdentifier']) ? $data['instrumentIdentifier'] : null;
-        $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
     }
 
     /**
@@ -161,43 +155,26 @@ class PtsV2PaymentsPost201ResponseTokenInformation implements ArrayAccess
     }
 
     /**
-     * Gets instrumentIdentifier
-     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformationInstrumentIdentifier
+     * Gets id
+     * @return string
      */
-    public function getInstrumentIdentifier()
+    public function getId()
     {
-        return $this->container['instrumentIdentifier'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets instrumentIdentifier
-     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformationInstrumentIdentifier $instrumentIdentifier
+     * Sets id
+     * @param string $id Name of the queue where orders that are not automatically accepted are sent.
      * @return $this
      */
-    public function setInstrumentIdentifier($instrumentIdentifier)
+    public function setId($id)
     {
-        $this->container['instrumentIdentifier'] = $instrumentIdentifier;
+        if (!is_null($id) && (strlen($id) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $id when calling PtsV2PaymentsPost201ResponseTokenInformationInstrumentIdentifier., must be smaller than or equal to 255.');
+        }
 
-        return $this;
-    }
-
-    /**
-     * Gets customer
-     * @return \CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformationCustomer
-     */
-    public function getCustomer()
-    {
-        return $this->container['customer'];
-    }
-
-    /**
-     * Sets customer
-     * @param \CyberSource\Model\PtsV2PaymentsPost201ResponseTokenInformationCustomer $customer
-     * @return $this
-     */
-    public function setCustomer($customer)
-    {
-        $this->container['customer'] = $customer;
+        $this->container['id'] = $id;
 
         return $this;
     }
@@ -260,5 +237,3 @@ class PtsV2PaymentsPost201ResponseTokenInformation implements ArrayAccess
         return json_encode(\CyberSource\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

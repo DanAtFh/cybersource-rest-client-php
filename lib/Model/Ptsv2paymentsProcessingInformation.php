@@ -55,6 +55,7 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'actionList' => 'string[]',
+        'actionTokenTypes' => 'string[]',
         'capture' => 'bool',
         'processorId' => 'string',
         'businessApplicationId' => 'string',
@@ -87,6 +88,7 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'actionList' => null,
+        'actionTokenTypes' => null,
         'capture' => null,
         'processorId' => null,
         'businessApplicationId' => null,
@@ -129,6 +131,7 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
      */
     protected static $attributeMap = [
         'actionList' => 'actionList',
+        'actionTokenTypes' => 'actionTokenTypes',
         'capture' => 'capture',
         'processorId' => 'processorId',
         'businessApplicationId' => 'businessApplicationId',
@@ -162,6 +165,7 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
      */
     protected static $setters = [
         'actionList' => 'setActionList',
+        'actionTokenTypes' => 'setActionTokenTypes',
         'capture' => 'setCapture',
         'processorId' => 'setProcessorId',
         'businessApplicationId' => 'setBusinessApplicationId',
@@ -195,6 +199,7 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
      */
     protected static $getters = [
         'actionList' => 'getActionList',
+        'actionTokenTypes' => 'getActionTokenTypes',
         'capture' => 'getCapture',
         'processorId' => 'getProcessorId',
         'businessApplicationId' => 'getBusinessApplicationId',
@@ -253,6 +258,7 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['actionList'] = isset($data['actionList']) ? $data['actionList'] : null;
+        $this->container['actionTokenTypes'] = isset($data['actionTokenTypes']) ? $data['actionTokenTypes'] : null;
         $this->container['capture'] = isset($data['capture']) ? $data['capture'] : false;
         $this->container['processorId'] = isset($data['processorId']) ? $data['processorId'] : null;
         $this->container['businessApplicationId'] = isset($data['businessApplicationId']) ? $data['businessApplicationId'] : null;
@@ -419,6 +425,27 @@ class Ptsv2paymentsProcessingInformation implements ArrayAccess
     public function setActionList($actionList)
     {
         $this->container['actionList'] = $actionList;
+
+        return $this;
+    }
+
+    /**
+     * Gets actionTokenTypes
+     * @return string[]
+     */
+    public function getActionTokenTypes()
+    {
+        return $this->container['actionTokenTypes'];
+    }
+
+    /**
+     * Sets actionTokenTypes
+     * @param string[] $actionTokenTypes Array of token types.
+     * @return $this
+     */
+    public function setActionTokenTypes($actionTokenTypes)
+    {
+        $this->container['actionTokenTypes'] = $actionTokenTypes;
 
         return $this;
     }
